@@ -33,6 +33,15 @@
                                     </form>
                                 </tr>';
         }
+        echo '
+        <tr>
+            <form action="admin.php?action=insert&panel=edit-users" method="post">
+                <td>id</td>
+                <td><input type="text" name="pseudo" placeholder="Pseudo"></td>
+                <td><input type="text" name="level" placeholder="1=admin 2=admin 3=user"></td>
+                <td><input type="submit" value="Ajouter l\'utilisateur"><td>
+            </form>
+        </tr>';
         echo '</table>
                     <br>';
        
@@ -64,18 +73,19 @@
                                     </form>
                                 </tr>';
         }
-        echo '</table>
-                    <br>';
+        
         // AJOUT D'UNE NOUVELLE ENTREE
         echo '<h2>Création d\'une nouvelle entrée</h2>
-        
-        <form action="admin.php?action=insert&panel=edit-posts" method="post">
-            <input type="text" name="title" placeholder="Title"><br>
-            <input type="text" name="desc" placeholder="Contenu"><br>
-            <input hidden value="'.time().'" name="date"><br>
-            <input type="submit" value="Ajouter l\'entrée">
-        </form>
-        
+        <tr>
+            <form action="admin.php?action=insert&panel=edit-posts" method="post">
+                <td>id</td>
+                <td><input type="text" name="title" placeholder="Title"></td>
+                <td><input type="text" name="desc" placeholder="Contenu"></td>
+                <td><input hidden value="'.time().'" name="date"><td>
+                <td><input type="submit" value="Ajouter l\'entrée"><td>
+            </form>
+        </tr>
+        </table>
         
         
         </div></body></html>';

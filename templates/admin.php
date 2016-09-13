@@ -1,12 +1,12 @@
 <?php
+
 include 'blocs/header-start.php';
 include 'blocs/nav.php';
 
 
 if (isset($_SESSION['pseudo'])){
 	$acces=true;
-	$pseudo=$_SESSION['pseudo'];
-    $id=$_SESSION['id'];
+	
 
 	
     if(isset($_GET['panel'])){

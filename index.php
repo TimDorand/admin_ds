@@ -13,8 +13,14 @@ $nom_page_all_in_url=$tab_url_barre[sizeof($tab_url_barre)-1];
 $tab_page_all_in_url=explode('?',$nom_page_all_in_url);
 $nom_page=$tab_page_all_in_url[0];
 
+if(isset($_SESSION['pseudo']) && isset($_SESSION['id']) && isset($_SESSION['level'])){
+    $pseudo = $_SESSION['pseudo'];
+    $id = $_SESSION['id'];
+    $level = $_SESSION['level'];
+}
+
 if (empty($nom_page)){
-    $nom_page='home';
+    $nom_page='home.php';
     $template=$nom_page;
     }
 else{

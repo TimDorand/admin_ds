@@ -23,6 +23,19 @@ if($acces==true && $level='1'){
 	         
 
 				break;
+			case 'insert':
+				if(isset($_POST['pseudo']) AND isset($_POST['level'])){
+		            $pseudo = htmlentities($_POST['pseudo']);
+		            $level = htmlentities($_POST['level']);
+		            $insert = db_insert('users', array('useradmin'=>$pseudo, 'admin'=>$level));
+			        if(isset($insert)){
+			            echo 'Validé ! <script>  window.location.href = "admin.php";</script> <a href="admin.php">Cliquez-ici pour valider</a>';
+		            }else{
+		                $tab_alerte['error']= "Problème lors de l'insertion";
+		                include 'blocs/erreur.php';
+		            }
+		        }
+				break;
 
 
 			default:
